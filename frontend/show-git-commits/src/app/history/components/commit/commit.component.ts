@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { IResponseCommit } from '../../models/commit.interface';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-commit',
@@ -13,6 +14,12 @@ export class CommitComponent {
   copyHash(hash?: string): void {
     this.copied = !this.copied;
     navigator.clipboard.writeText(hash ?? '')
-      .then(() => alert('Hash copied!'))
+      .then(() => Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        text: 'Copied',
+        showConfirmButton: false,
+        timer: 1000
+      }))
   }
 }

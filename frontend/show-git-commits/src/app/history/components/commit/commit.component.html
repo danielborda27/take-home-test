@@ -2,7 +2,7 @@
   <div class="flex min-w-0 gap-x-4">
     <img 
       class="h-12 w-12 flex-none rounded-full bg-gray-50" 
-      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" 
+      [src]="commitResponse?.author?.avatar_url" 
       alt="GitHub avatar"
     />
     <div class="min-w-0 flex items-start justify-center flex-col">
@@ -32,7 +32,7 @@
       <p class="truncate text-xs leading-5 text-gray-500">{{ commitResponse?.commit?.author?.email }}</p>
     </div>
   </div>
-  <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
+  <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end sm:justify-center">
     <p class="mt-1 text-xs leading-5 text-gray-500">{{ commitResponse?.commit?.author?.date | date:'yyyy-MM-dd HH:mm' }}</p>
   </div>
 </li>
