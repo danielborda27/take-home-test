@@ -7,6 +7,8 @@ export class GithubService {
   private readonly apiUrl = 'https://api.github.com';
 
   async getCommits(owner: string, repo: string): Promise<IResponseCommit[]> {
-    return await axios.get(`${this.apiUrl}/repos/${owner}/${repo}/commits`);
+    const url = `${this.apiUrl}/repos/${owner}/${repo}/commits`;
+    const response = await axios.get(url);
+    return response.data;
   }
 }
