@@ -8,8 +8,8 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class CommitService {
-  // private _url: string = `${environment.baseUrl}/commits`
-  private _url: string = '/assets/mocks/response-commits.json'
+  private _url: string = `${environment.baseUrl}/github/commits/danielborda27/take-home-test`
+  // private _url: string = '/assets/mocks/response-commits.json'
 
   constructor(
     private _http: HttpClient
